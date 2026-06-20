@@ -12,6 +12,8 @@ def test_principal():
     assert principal.institution is None
     assert principal.api_key_id is None
     assert principal == AnonymousPrincipal
+    with pytest.raises(FrozenInstanceError):
+        principal.id = 'changed'
 
 def test_policy():
     now = datetime.now()

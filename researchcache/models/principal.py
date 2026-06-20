@@ -1,7 +1,7 @@
 from dataclasses import dataclass
 from typing import Literal
 
-@dataclass
+@dataclass(frozen=True)
 class Principal:
     id: str
     type: Literal['anonymous', 'api_key']
