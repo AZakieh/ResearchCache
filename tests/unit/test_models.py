@@ -27,4 +27,13 @@ def test_policy():
 def test_decision():
     now = datetime.now()
     decision = Decision(allowed=True, reason='policy is open', principal_id='anon', object_id='abcdefghijklmnopqrstuvwxyz123456', issued_at=now, token='fake-token-for-testing')
+    assert decision.allowed
+    assert decision.reason == 'policy is open'
+    assert decision.principal_id == 'anon'
+    assert decision.object_id == 'abcdefghijklmnopqrstuvwxyz123456'
+    assert decision.issued_at == now
+    assert decision.token == 'fake-token-for-testing'
+    with pytest.raises(FrozenInstanceError):
+        decision.allowed = True
+
 
