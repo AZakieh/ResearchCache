@@ -1,0 +1,21 @@
+origins:
+  - host: ftp.ensembl.org
+    label: "Ensembl (EBI) — genomics reference assemblies"
+
+  - host: ftp.ebi.ac.uk
+    label: "EBI FTP — AlphaFold, UniProt, reference proteomes"
+
+  - host: ftp.ncbi.nlm.nih.gov
+    label: "NCBI FTP — GenBank, SRA, reference sequences"
+
+  - host: cds.climate.copernicus.eu
+    label: "Copernicus CDS — ERA5 climate reanalysis"
+
+  - host: openneuro.org
+    label: "OpenNeuro — neuroimaging datasets (BIDS format)"
+
+  - host: zenodo.org
+    label: "Zenodo — open research data (open-licensed only)"
+
+  - host: data.mendeley.com
+    label: "Mendeley Data — CC-licensed research datasets"
