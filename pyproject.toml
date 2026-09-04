@@ -58,6 +58,11 @@ include = ["researchcache*"]
 
 [tool.pytest.ini_options]
 asyncio_mode = "auto"
+# Session-scoped loop: get_engine()/get_session_factory() are process-wide
+# lru_cache singletons, so their pooled asyncpg connections must stay bound
+# to one event loop across the whole test run, not a fresh loop per test.
+asyncio_default_test_loop_scope = "session"
+asyncio_default_fixture_loop_scope = "session"
 
 [tool.ruff]
 line-length = 100
